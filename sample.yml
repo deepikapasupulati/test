@@ -1,0 +1,9 @@
+---
+- hosts : aws
+  connection : ssh
+  remote_user : centos
+  become_method : sudo
+  gather_facts : yes
+  tasks :
+  - name : Connect to the remote host and executing yum updates
+    yum : name=* state=latest
